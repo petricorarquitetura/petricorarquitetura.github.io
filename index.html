@@ -34,6 +34,7 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
+							<!-- <a href="#" class="image"><img src="images/petricor-logo.png" alt="" data-position="center center" /></a> -->
 							<h1>Petricor Arquitetura</h1>
 							<p>Transformando ambientes com neuroarquitetura aplicada.</p>
 							<ul class="actions">
@@ -113,23 +114,24 @@
 							<p>Entre em contato conosco através do formulário abaixo ou de um de nossos meios de comunicação (telefone ou email).</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<form method="post" action="contact.php">
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
+												<input type="text" name="name" id="name" required/>
 											</div>
 											<div class="field half">
 												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
+												<input type="text" name="email" id="email" required/>
 											</div>
 											<div class="field">
 												<label for="message">Mensagem</label>
-												<textarea name="message" id="message" rows="5"></textarea>
+												<textarea name="message" id="message" rows="5" required></textarea>
 											</div>
 										</div>
 										<ul class="actions">
-											<li><a href="" class="button submit">Enviar Mensagem</a></li>
+                      <!-- class="button submit" -->
+											<li><input type="submit" name="submit" value="Enviar Mensagem" /></li>
 										</ul>
 									</form>
 								</section>
