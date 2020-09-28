@@ -17,7 +17,7 @@
   $email->addContent(
       "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
   );
-  $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+  $sendgrid = new \SendGrid(getenv('petricor'));
   try {
       $response = $sendgrid->send($email);
       print $response->statusCode() . "\n";
