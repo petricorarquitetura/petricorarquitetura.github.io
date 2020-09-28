@@ -1,5 +1,4 @@
 <?php
-
   require 'vendor/autoload.php'; // If you're using Composer (recommended)
   // Comment out the above line if not using Composer
   // require("<PATH TO>/sendgrid-php.php");
@@ -9,51 +8,35 @@
   // which is included in the download:
   // https://github.com/sendgrid/sendgrid-php/releases
 
+  $to = "petricorarquitetura@gmail.com"; // this is your email address
+  $from = $_POST['email']; // this is the sender's Email address
+  $name = $_POST['name'];
+  $message = $name . " escreveu a seguinte mensagem:" . "\n\n" . $_POST['message'];
+
   $email = new \SendGrid\Mail\Mail(); 
-  $email->setFrom("andrewsjuchem@gmail.com", "Example User");
-  $email->setSubject("Sending with SendGrid is Fun");
-  $email->addTo("andrewsjuchem@gmail.com", "Example User");
-  $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
+  $email->setFrom($from, "Petricor");
+  $email->setSubject("Petricor - Mensagem do Site");
+  $email->addTo($to, $name);
+  // $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
   $email->addContent(
-      "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+      "text/html", $message
   );
-  $sendgrid = new \SendGrid(getenv('petricor'));
+  $sendgrid = new \SendGrid('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');
   try {
       $response = $sendgrid->send($email);
-      print $response->statusCode() . "\n";
-      print_r($response->headers());
-      print $response->body() . "\n";
+      // print $response->statusCode() . "\n";
+      // print_r($response->headers());
+      // print $response->body() . "\n";
+      echo "<script type='text/javascript'>"; 
+      echo "    alert('Email enviado com sucesso.');"; 
+      echo "    location.href = 'index.html'; "; 
+      echo " </script>"; 
   } catch (Exception $e) {
-      echo 'Caught exception: '. $e->getMessage() ."\n";
+      // echo 'Caught exception: '. $e->getMessage() ."\n";
+      echo "<script type='text/javascript'>"; 
+      echo "    alert('Ocorreu um erro durante o envio do e-mail.');"; 
+      echo "    location.href = 'index.html'; "; 
+      echo " </script>"; 
   }
 
-  // if(isset($_POST['submit'])){
-  //   $to = "andrewsjuchem@gmail.com"; // this is your email address
-  //   $from = $_POST['email']; // this is the sender's Email address
-  //   $name = $_POST['name'];
-  //   $subject = "Petricor - Mensagem do Site";
-  //   $subject2 = "Petricor - Mensagem enviada com sucesso";
-  //   $message = $name . " escreveu a seguinte mensagem:" . "\n\n" . $_POST['message'];
-  //   $message2 = "Olá " . $name . ". A seguinte mensagem foi enviada para Petricor. \n\n" . $_POST['message'];
-
-  //   $headers = "From:" . $from;
-  //   $headers2 = "From:" . $to;
-
-  //   if (mail($to, $subject, $message, $headers)) {
-  //       //echo "Enviado!";
-  //       echo "<script type='text/javascript'>"; 
-  //       echo "    alert('Email enviado com sucesso.');"; 
-  //       echo "    location.href = 'index.html'; "; 
-  //       echo " </script>"; 
-  //     } else {
-  //       //echo "Ocorreu um erro durante o envio da mensagem.";
-  //       echo "<script type='text/javascript'>"; 
-  //       echo "    alert('Ocorreu um erro durante o envio do e-mail.');"; 
-  //       echo "    location.href = 'index.html'; "; 
-  //       echo " </script>"; 
-  //     }
-  //   // mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-  //   // You can also use header('Location: thank_you.php'); to redirect to another page.
-  //   // You cannot use header and echo together. It's one or the other.
-  // }
 ?>
