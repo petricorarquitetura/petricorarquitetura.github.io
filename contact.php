@@ -21,7 +21,7 @@
   $email->addContent(
       "text/html", $message
   );
-  $sendgrid = new \SendGrid('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');
+  $sendgrid = new \SendGrid('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');
   try {
       $response = $sendgrid->send($email);
       // print $response->statusCode() . "\n";
