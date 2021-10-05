@@ -112,6 +112,30 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+/* CUSTOM PETRICOR */
+
+  #logo {
+    max-width: 60%;
+  }
+
+		@media screen and (max-width: 1680px) {
+		}
+
+		@media screen and (max-width: 1280px) {
+		}
+
+    @media screen and (max-width: 980px) {
+    }
+
+    @media screen and (max-width: 736px) {
+    }
+
+    @media screen and (max-width: 480px) {
+      #logo {
+        max-width: 100%;
+      }
+    }
+
 /* Type */
 
 	body, input, select, textarea {
