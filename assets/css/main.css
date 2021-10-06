@@ -112,30 +112,6 @@ input, select, textarea {
 			transition: none !important;
 		}
 
-/* CUSTOM PETRICOR */
-
-  #logo {
-    max-width: 60%;
-  }
-
-		@media screen and (max-width: 1680px) {
-		}
-
-		@media screen and (max-width: 1280px) {
-		}
-
-    @media screen and (max-width: 980px) {
-    }
-
-    @media screen and (max-width: 736px) {
-    }
-
-    @media screen and (max-width: 480px) {
-      #logo {
-        max-width: 100%;
-      }
-    }
-
 /* Type */
 
 	body, input, select, textarea {
@@ -3931,3 +3907,54 @@ input, select, textarea {
 			}
 
 		}
+
+
+/* CUSTOM PETRICOR */
+
+  #logo {
+    max-width: 50%;
+  }
+
+  .banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
+    grid-gap: 15px;
+  }
+
+  .banner-image {
+    max-width: 100%;
+  }
+
+		@media screen and (max-width: 1680px) {
+		}
+
+		@media screen and (max-width: 1280px) {
+		}
+
+    @media screen and (max-width: 980px) {
+      #logo {
+        max-width: 80%;
+      }
+      .banner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media screen and (max-width: 736px) {
+      #logo {
+        max-width: 80%;
+      }
+      .banner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      #logo {
+        max-width: 100%;
+      }
+      .banner {
+        grid-template-columns: 1fr;
+      }
+    }
