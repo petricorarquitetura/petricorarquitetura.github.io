@@ -11,11 +11,18 @@
   $to = "petricorarquitetura@gmail.com"; // this is your email address
   $from = $_POST['email']; // this is the sender's Email address
   $name = $_POST['name'];
-  $message = $name . " escreveu a seguinte mensagem:" . "\n\n" . $_POST['message'];
+  $phone = $_POST['phone'];
+  $message = "Nome: " . $name
+    . "\n\n"
+    . "Telefone: " . $phone
+    . "\n\n"
+    . "Mensagem: "
+    . "\n\n"
+    . $_POST['message'];
 
   $email = new \SendGrid\Mail\Mail(); 
-  $email->setFrom($from, "Petricor");
-  $email->setSubject("Petricor - Mensagem do Site");
+  $email->setFrom($from, $name ?? "Petricor");
+  $email->setSubject("Mensagem do Site - " . $name ?? "Petricor");
   $email->addTo($to, $name);
   // $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
   $email->addContent(
