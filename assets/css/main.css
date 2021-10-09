@@ -3864,9 +3864,9 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			#sidebar {
+			/* #sidebar {
 				display: none;
-			}
+			} */
 
 		}
 
@@ -3915,15 +3915,8 @@ input, select, textarea {
     max-width: 50%;
   }
 
-  .banner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-grow: 1;
-    grid-gap: 15px;
-  }
-
-  .banner-image {
-    max-width: 100%;
+  #sidebar #responsive-menu {
+    display: none;
   }
 
 		@media screen and (max-width: 1680px) {
@@ -3933,28 +3926,59 @@ input, select, textarea {
 		}
 
     @media screen and (max-width: 980px) {
-      #logo {
-        max-width: 80%;
-      }
-      .banner {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media screen and (max-width: 736px) {
       #logo {
-        max-width: 80%;
+        max-width: 100%;
       }
-      .banner {
-        grid-template-columns: 1fr;
+      .wrapper.fullscreen {
+        padding: 3.5em 0;
       }
+      #sidebar {
+        height: unset;
+      }
+      #sidebar #responsive-menu {
+        display: flex;
+        justify-content: right;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+      }
+      #sidebar #responsive-menu #responsive-menu-button {
+        border: none !important;
+        display: block;
+        outline: none;
+        font-size: 20px;
+        line-height: unset;
+        height: unset;
+        padding: 0 1em 0 1em;
+        margin: 0;
+        border-radius: 0;
+        background-color: unset;
+      }
+      #sidebar #responsive-menu #responsive-menu-button:hover,
+      #sidebar #responsive-menu #responsive-menu-button:active {
+        background-color: unset;
+      }
+      #sidebar #responsive-menu #responsive-menu-button:hover:after {
+        opacity: 0;
+      }
+      #sidebar #navigation-bar {
+        height: unset;
+        display: none;
+			}
+      #sidebar #navigation-bar ul {
+        flex-direction: column;
+        height: unset;
+			}
+      #sidebar #navigation-bar ul li {
+        margin: 0;
+			}
+      /* nav ul li {
+        border-top: 1px solid rgba(255,255,255,0.3); 
+        border-bottom: 1px solid rgba(0,0,0,0.1); 
+      } */
     }
 
     @media screen and (max-width: 480px) {
-      #logo {
-        max-width: 100%;
-      }
-      .banner {
-        grid-template-columns: 1fr;
-      }
     }

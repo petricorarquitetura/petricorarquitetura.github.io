@@ -124,6 +124,8 @@
 					&&	$sidebar.length > 0)
 						return $sidebar.height();
 
+          if (breakpoints.active('<=small')) return 50;
+
 				return 0;
 
 			}
