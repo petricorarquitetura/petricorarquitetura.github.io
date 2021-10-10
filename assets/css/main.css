@@ -3919,6 +3919,21 @@ input, select, textarea {
     display: none;
   }
 
+  #social-media-top-nav {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    z-index: 1000;
+    background-color: #3c2c62;
+    opacity: 0.8;
+    margin: 0;
+  }
+  #social-media-top-nav ul {
+    margin: 0;
+  }
+
 		@media screen and (max-width: 1680px) {
 		}
 
@@ -3929,6 +3944,9 @@ input, select, textarea {
     }
 
     @media screen and (max-width: 736px) {
+      #social-media-top-nav {
+        display: none;
+      }
       #logo {
         max-width: 100%;
       }
