@@ -45,6 +45,15 @@ window.onload = function(){
 	}
 }
 
+window.addEventListener('resize', function(event){
+  var x = document.getElementById('navigation-bar');
+  if (breakpoints.active('>=medium')) {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+});
+
 document.querySelector('#responsive-menu-button').addEventListener('click', function (e) {
   showHideElement('navigation-bar');
 });
