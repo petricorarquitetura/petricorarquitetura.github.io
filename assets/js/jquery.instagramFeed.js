@@ -182,7 +182,7 @@
         options.cache_data_key = 'instagramFeed_' + options.type + '_' + options.id;
         options.cache_time_key = options.cache_data_key + '_time';
 
-        var token = 'IGQVJXOTk0V3lTRjlCLTlla28zUGdWN2VSRm5RTGVxU2tWU29NeEJJV2dxUHJlN0otNjRyamZANRGczV2hLbVN0M2dlNXdfNzc4Ml9qMWx0cTJKNG9rclB4OENobGw2M0c5VlpBQTEzZA1NDQ2xUekRPZAQZDZD';
+        var token = 'INSERT_TOKEN_HERE';
         var fields = 'id,media_type,media_url,thumbnail_url,timestamp,permalink,caption';
         var limit = options.items; // Set a number of display items
 
